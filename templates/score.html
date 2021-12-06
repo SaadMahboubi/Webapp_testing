@@ -1,0 +1,23 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Score</title>
+</head>
+<body>
+
+    <h1>Welcome to the Score and Points Portal!</h1>
+    <h3>Listes des clubs:</h3>
+    <ul>
+        {% for club in clubs%}
+        <li>
+            Name : {{club['name']}}<br />
+            email : {{club['email']}}</br>
+            points : {{club['points']}}</br>
+        </li>
+        <hr />
+        {% endfor %}
+    </ul>
+    <button type="submit"><a href="{{url_for('index')}}">logout </a></button>
+</body>
+</html>
