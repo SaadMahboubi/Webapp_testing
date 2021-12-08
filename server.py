@@ -54,7 +54,7 @@ def book(competition,club):
                 else:
                     return  render_template('booking.html',club=foundClub,competition=foundCompetition, error="Date limite d'achat dépassé, cliquez ici pour revenir en arrière :"), 403
     except : 
-        return redirect(url_for('index')), 403
+        return redirect(url_for('index'))
 
 
 @app.route('/purchasePlaces',methods=['POST'])
@@ -72,9 +72,9 @@ def purchasePlaces():
             flash('Great-booking complete!')
             return render_template('welcome.html', club=club, competitions=competitions)
         else:
-            return render_template('welcome.html', club=club, competitions=competitions, error = "Not enoought point for buy"), 403
+            return render_template('welcome.html', club=club, competitions=competitions, errorPurchase = "Not enoought point for buy"), 403
     else:
-        return render_template('welcome.html', club=club, competitions=competitions, error = "Impossible to buy more than 12 places and less than 1"), 403
+        return render_template('welcome.html', club=club, competitions=competitions, errorPurchase = "Impossible to buy more than 12 places and less than 1"), 403
 
 
 # TODO: Add route for points display

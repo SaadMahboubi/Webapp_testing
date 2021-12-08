@@ -40,8 +40,8 @@ def test_Booking(client):
     assert "/book/Spring%20Festival/Simply%20Lift" in data
 
 def test_invalideBooking(client):
-    response = client.get("/book/Winter%20Festival/Simply%20Lift")
-    assert response.status_code == 403
+    response = client.get("/book/Winter%20Festival/Simply%20Lift",follow_redirects=True)
+    assert response.status_code == 200
     data = response.data.decode()
     print(data)
 
