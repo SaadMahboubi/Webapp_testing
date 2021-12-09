@@ -1,6 +1,6 @@
-#Projet Web App
+# Projet Web App
 
-##Contexte : 
+## Contexte : 
 En arrivant à notre bureau un matin, nous recevons le mail suivant de Sayf Bejaoui :
 
 A : vous
