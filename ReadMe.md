@@ -27,10 +27,10 @@ Sayf Bejaoui,
         #puis accéder à http://127.0.0.1:5000/
 
 ## Exécution de la vérification de la couverture des tests sur l'application server : 
-    - coverage run -m pytest
-    - coverage html 
+    coverage run -m pytest
+    coverage html 
         #création du fichier html présent dans le dossier /htmlcov
 
 ## Exécution des test de performances avec locust : 
-    - locust -f ./tests/performance_tests/locust.py --host http://127.0.0.1:5000 --users 500 --spawn-rate 2
+    locust -f ./tests/performance_tests/locust.py --host http://127.0.0.1:5000 --users 500 --spawn-rate 2
         #Regarder l'onglet Charts de http://localhost:8089
