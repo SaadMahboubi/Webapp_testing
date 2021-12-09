@@ -1,6 +1,6 @@
 from locust import HttpUser, TaskSet, task, between
 from server import *
-# locust -f ./tests/performance_tests/locust.py --host http://127.0.0.1:5000 --users 500 --spawn-rate 500
+# locust -f ./tests/performance_tests/locust.py --host http://127.0.0.1:5000 --users 500 --spawn-rate 2
 # Regarder l'onglet Charts de http://localhost:8089
 
 class WebsiteUser(HttpUser):
@@ -20,13 +20,16 @@ class WebsiteUser(HttpUser):
         self.client.get(url='/book/Spring%20Festival/Simply%20Lift')
 
     @task
-    def test_page(self):
+    def user_score(self):
         self.client.get(url='/score')
         
     @task
-    def test_page(self):
-        self.client.get(url='/purchasePlaces',data =dict(club = 'Simply Lift', competition='Spring Festival', places = 1))
+    def user_purchase(self):
+        # data = {"club" : "Simply Lift", "competition":"Spring Festival", "places" : 1}
+        # self.client.post("/purchasePlaces", data)
+        data={"club":"Iron Temple","competitions":"Spring Festival","places":1}
+        self.client.post("/purchasePlaces", data=data)
         
     @task
-    def test_page(self):
+    def user_logout(self):
         self.client.get(url='/logout')
