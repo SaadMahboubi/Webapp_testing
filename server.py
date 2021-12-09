@@ -14,7 +14,6 @@ def loadCompetitions():
          return listOfCompetitions
 
 clubs = loadClubs()
-print(clubs[0]['email'])
 
 app = Flask(__name__)
 app.secret_key = 'something_special'
