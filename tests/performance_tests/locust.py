@@ -25,8 +25,6 @@ class WebsiteUser(HttpUser):
         
     @task
     def user_purchase(self):
-        # data = {"club" : "Simply Lift", "competition":"Spring Festival", "places" : 1}
-        # self.client.post("/purchasePlaces", data)
         data={"club":"Iron Temple","competitions":"Spring Festival","places":1}
         self.client.post("/purchasePlaces", data=data)
         
