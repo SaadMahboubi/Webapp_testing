@@ -16,12 +16,13 @@
        </ul>
     {% endif%}
     Points available: {{club['points']}}
-    <p>{%if error%}
-        <p class=error>{{error}}</p>
+    <p> 
+        {%if error%}
+            <p class=error>{{error}}</p>
         {%endif%}</p>
 
         {%if errorPurchase%}
-        <p class=error>{{errorPurchase}}</p>
+            <p class=error>{{errorPurchase}}</p>
         {%endif%}</p>
     <h3>Competitions:</h3>
     <ul>

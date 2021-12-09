@@ -44,6 +44,7 @@ def test_invalideBooking(client):
     assert response.status_code == 200
     data = response.data.decode()
     print(data)
+    assert "Welcome to the GUDLFT Registration Portal!" in data
 
 #Achat de places ok
 def test_valid_purchase_point(client):

@@ -77,8 +77,6 @@ def purchasePlaces():
         return render_template('welcome.html', club=club, competitions=competitions, errorPurchase = "Impossible to buy more than 12 places and less than 1"), 403
 
 
-# TODO: Add route for points display
-
 @app.route('/logout')
 def logout():
     return redirect(url_for('index'))
